@@ -1,0 +1,20 @@
+{
+  "name": "garemaster",
+  "version": "1.0.0",
+  "description": "Applicativo per consultare le mie gare master",
+  "main": "index.js",
+  "scripts": {
+    "test": "testmaster"
+  },
+  "keywords": [
+    "gare",
+    "master",
+    "nuoto"
+  ],
+  "author": "Federico Masci",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  }
+}
