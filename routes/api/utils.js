@@ -1,11 +1,15 @@
 const express = require('express');
+const { verifyToken } = require('../../middlewares');
 const router = express.Router();
 const {
     tipoVasche,
     categorie,
     stagioni,
-    specialita
+    specialita,
+    atleti
 } = require('../../controllers/utilsController');
+
+router.use(verifyToken);
 
 router.get('/specialita', async (req, res) => {
     try {
@@ -39,5 +43,13 @@ router.get('/tipovasca', async (req, res) => {
         res.status(500).send(e.toString());
     }
 });
+router.get('/atleti', async (req, res) => { 
+    try {
+        const result = await atleti();
+        res.json(result);
+    } catch (error) {
+        res.status(500).send(e.toString());
+    }
+})
 
 module.exports = router;

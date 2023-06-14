@@ -2,8 +2,8 @@ module.exports = {
     params: function (mode) {
         if (mode == 'staging') {
             return {
-                host: 'localhost',
-                port: '8889',
+                host: '127.0.0.1',
+                port: '3306',
                 user: 'usr_book',
                 password: 'U(7NeFgNd9pwu/Y',
                 database: 'gare',

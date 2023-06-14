@@ -1,6 +1,5 @@
 const utils = require('./controllers/utilsController');
 const gare = require('./controllers/gareController');
-const pb = require('./controllers/personalbestController');
 const stat = require('./controllers/statController');
 
 
@@ -40,6 +39,17 @@ const specialita = async () => {
         const response = await utils.specialita();
 
         console.log(response);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const atleti = async () => {
+    try {
+        const response = await utils.atleti();
+
+        console.log(response);
+
     } catch (error) {
         console.log(error);
     }
@@ -172,4 +182,5 @@ const statistiche = async () => {
 //deletegara();
 //listagare();
 //personalbest();
-statistiche();
+//statistiche();
+atleti();

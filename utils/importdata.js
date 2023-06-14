@@ -34,7 +34,6 @@ conn.query(query, (values) => {
                         let datajson = JSON.parse(data);
                         let gare = datajson.response.docs;
 
-                        let insert = "";
                         gare.forEach(gara => {
                             gara['punteggio'] = calcolaPunteggio(gara['tempo_ufficiale'], gara['tempo_base']);
 
