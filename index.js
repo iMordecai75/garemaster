@@ -17,12 +17,14 @@ app.set('view engine', '.hbs');
 
 // routes management
 const authRoutes = require('./routes/auth/login');
+const tokenRoutes = require('./routes/auth/token');
 const userRoutes = require('./routes/api/user');
 const utilsRoutes = require('./routes/api/utils');
 const statRoutes = require('./routes/api/stat');
 const gareRoutes = require('./routes/api/gare');
 
 app.use('/auth/login', authRoutes);
+app.use('/auth/token', tokenRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/utils', utilsRoutes);
 app.use('/api/stat', statRoutes);

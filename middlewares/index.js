@@ -5,8 +5,9 @@ const verifyToken = (req, res, next) => {
     if (typeof bearerHeader !== 'undefined') {
         const bearerToken = bearerHeader.split(' ')[1];
         token = bearerToken;
+        apikey = req.headers['access-token']; 
 
-        jwt.verify(token, 'secretkey', async (err, authData) => {
+        jwt.verify(token, apikey, async (err, authData) => {
             if (err) {
                 res.sendStatus(403);
             } else {                
