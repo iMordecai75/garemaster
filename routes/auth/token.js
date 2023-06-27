@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
         const apikey = req.body.apikey;        
 
         const result = await getToken(apikey);
-        
+        console.log(result);
         res.json(result);
     } catch (error) {
         res.status(500).send(error.toString());

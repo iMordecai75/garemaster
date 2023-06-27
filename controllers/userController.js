@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 async function userLogin(username, plainPassword) {
     try {
         const { id, password, apikey } = await getUserByUsername(username);
-        console.log(plainPassword, password);
         const logged = await bcrypt.compare(plainPassword, password);
 
         if (logged) {

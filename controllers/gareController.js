@@ -55,7 +55,7 @@ async function getListGare(params) {
 
 async function getGaraById(id) {
     try {
-        let query = 'SELECT `id`,`atleta`,`codice_fiscale`,`denominazione`,`lunghezza_vasca`,`descrizione`,`luogo`,FROM_UNIXTIME(`data_risultato`) AS data_risultato,`sigla_categoria`,`tempo_base`,`tempo_ufficiale`,`punteggio`,`data_nascita`,`tipo_cronometraggio`,`descrizione_breve`,`stagione`,`sesso`';
+        let query = 'SELECT `id`,`atleta`,`codice_fiscale`,`denominazione`,`lunghezza`,`lunghezza_vasca`,`descrizione`,`luogo`,FROM_UNIXTIME(`data_risultato`) AS data_risultato,`sigla_categoria`,`tempo_base`,`tempo_ufficiale`,`punteggio`,`data_nascita`,`id_tipo_cronometraggio`,`tipo_cronometraggio`,`codice_gara`,`descrizione_breve`,`stagione`,`sesso`';
         query += 'FROM `gare` WHERE `id` =?';
 
         const [result] = await pool.query(query, [id]);
